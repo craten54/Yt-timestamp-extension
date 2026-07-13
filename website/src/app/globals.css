@@ -1,0 +1,156 @@
+@import "tailwindcss";
+
+@variant dark (&:where(.dark, .dark *));
+
+:root {
+  --background: #ffffff;
+  --foreground: #0c0f16;
+}
+
+.dark {
+  --background: #030307;
+  --foreground: #f8fafc;
+}
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui;
+  --font-serif: var(--font-playfair), Georgia, serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  transition: background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1), color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Cinematic Ambient Gradients */
+.ambient-glow-1 {
+  background: radial-gradient(circle at center, rgba(239, 68, 68, 0.08) 0%, rgba(239, 68, 68, 0) 70%);
+}
+
+.dark .ambient-glow-1 {
+  background: radial-gradient(circle at center, rgba(244, 63, 94, 0.06) 0%, rgba(244, 63, 94, 0) 75%);
+}
+
+.ambient-glow-2 {
+  background: radial-gradient(circle at center, rgba(245, 158, 11, 0.06) 0%, rgba(245, 158, 11, 0) 70%);
+}
+
+.dark .ambient-glow-2 {
+  background: radial-gradient(circle at center, rgba(217, 119, 6, 0.04) 0%, rgba(217, 119, 6, 0) 75%);
+}
+
+/* Glassmorphism Refinements */
+.glass {
+  background: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.dark .glass {
+  background: rgba(8, 9, 17, 0.45);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.02);
+}
+
+.dark .glass-card {
+  background: rgba(10, 11, 20, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.02);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Glowing Border Effect */
+.glow-border {
+  position: relative;
+  border-radius: 1rem;
+  transition: all 0.3s ease;
+}
+
+.glow-border::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: 1rem;
+  padding: 1px;
+  background: linear-gradient(to bottom, rgba(239, 68, 68, 0.15), rgba(245, 158, 11, 0.05));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.dark .glow-border::after {
+  background: linear-gradient(to bottom, rgba(244, 63, 94, 0.25), rgba(217, 119, 6, 0.05));
+}
+
+.glow-border:hover::after {
+  opacity: 1;
+  background: linear-gradient(to bottom, rgba(239, 68, 68, 0.45), rgba(245, 158, 11, 0.2));
+}
+
+.dark .glow-border:hover::after {
+  background: linear-gradient(to bottom, rgba(244, 63, 94, 0.55), rgba(217, 119, 6, 0.25));
+}
+
+/* Typography styles */
+.text-movie-title {
+  font-family: var(--font-serif);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.eyebrow-text {
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  background: linear-gradient(to right, #ef4444, #f59e0b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.dark .eyebrow-text {
+  background: linear-gradient(to right, #f43f5e, #fbbf24);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Animations */
+@keyframes float {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(1deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+.animate-float {
+  animation: float 8s ease-in-out infinite;
+}
+
+@keyframes drift {
+  0% { transform: translate(0px, 0px) scale(1); }
+  33% { transform: translate(30px, -50px) scale(1.1); }
+  66% { transform: translate(-20px, 20px) scale(0.95); }
+  100% { transform: translate(0px, 0px) scale(1); }
+}
+
+.animate-drift {
+  animation: drift 15s ease-in-out infinite alternate;
+}
