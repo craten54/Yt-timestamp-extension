@@ -89,6 +89,7 @@ body {
   padding: 1px;
   background: linear-gradient(to bottom, rgba(239, 68, 68, 0.15), rgba(245, 158, 11, 0.05));
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   pointer-events: none;
@@ -124,12 +125,14 @@ body {
   letter-spacing: 0.25em;
   background: linear-gradient(to right, #ef4444, #f59e0b);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .dark .eyebrow-text {
   background: linear-gradient(to right, #f43f5e, #fbbf24);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
