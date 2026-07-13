@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VOD Timestamp</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="w-80 p-4 bg-zinc-900 text-white font-sans border border-zinc-700">
+    <div class="flex flex-col gap-4">
+        <!-- Header -->
+        <div class="text-center">
+            <h1 class="text-xl font-bold text-red-500">VOD Timestamp</h1>
+            <p class="text-xs text-zinc-400">AI Chapter Generator</p>
+        </div>
+
+        <!-- Input API Key -->
+        <div class="bg-zinc-800 p-3 rounded-lg border border-zinc-700">
+            <div class="flex justify-between items-center mb-1.5">
+                <label class="block text-xs text-zinc-300">API Key Gemini:</label>
+                <a href="https://aistudio.google.com/" target="_blank" class="text-[10px] text-red-400 hover:text-red-300 hover:underline transition-colors font-medium">
+                    Dapatkan Key Gratis
+                </a>
+            </div>
+            <input type="password" id="apiKeyInput" placeholder="Paste API Key di sini..."
+                class="w-full p-2 rounded bg-zinc-900 border border-zinc-650 focus:outline-none focus:border-red-500 text-sm">
+            <button id="saveKeyBtn"
+                class="mt-2.5 w-full bg-zinc-750 hover:bg-zinc-700 py-1.5 rounded text-xs font-semibold transition cursor-pointer">
+                Simpan Key
+            </button>
+        </div>
+
+        <!-- Tombol Aksi Utama -->
+        <button id="generateBtn"
+            class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-2.5 px-4 rounded shadow-lg transition flex justify-center items-center">
+            <span>Generate & Download TXT</span>
+        </button>
+
+        <!-- Status Message (Hidden by default) -->
+        <div id="statusContainer" class="hidden text-center p-2 rounded bg-zinc-800 border border-zinc-700">
+            <p id="statusMsg" class="text-xs text-zinc-300"></p>
+        </div>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+
+</html>
