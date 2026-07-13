@@ -18,11 +18,16 @@
 
         <!-- Input API Key -->
         <div class="bg-zinc-800 p-3 rounded-lg border border-zinc-700">
-            <label class="block text-xs text-zinc-300 mb-1">API Key Gemini:</label>
+            <div class="flex justify-between items-center mb-1.5">
+                <label class="block text-xs text-zinc-300">API Key Gemini:</label>
+                <a href="https://aistudio.google.com/" target="_blank" class="text-[10px] text-red-400 hover:text-red-300 hover:underline transition-colors font-medium">
+                    Dapatkan Key Gratis
+                </a>
+            </div>
             <input type="password" id="apiKeyInput" placeholder="Paste API Key di sini..."
-                class="w-full p-2 rounded bg-zinc-900 border border-zinc-600 focus:outline-none focus:border-red-500 text-sm">
+                class="w-full p-2 rounded bg-zinc-900 border border-zinc-650 focus:outline-none focus:border-red-500 text-sm">
             <button id="saveKeyBtn"
-                class="mt-2 w-full bg-zinc-700 hover:bg-zinc-600 py-1.5 rounded text-xs font-semibold transition">
+                class="mt-2.5 w-full bg-zinc-750 hover:bg-zinc-700 py-1.5 rounded text-xs font-semibold transition cursor-pointer">
                 Simpan Key
             </button>
         </div>
