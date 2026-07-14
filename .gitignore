@@ -1,0 +1,34 @@
+# Dependency directories
+website/node_modules/
+
+# Next.js build outputs
+website/.next/
+website/out/
+
+# Local env files (highly critical: keeps API keys out of Git if you use local files)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.env
+
+# Debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Operating System files
+.DS_Store
+Thumbs.db
+
+# IDEs and editors
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
